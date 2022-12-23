@@ -1,15 +1,19 @@
 {
-  "name": "tablepro",
+  "name": "tableprozyb",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "基于elementUI table功能增强组件",
+  "keyword": "table",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name TablePro --dest lib src/installComponents.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "element-ui": "^2.13.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",
@@ -22,5 +26,6 @@
     "eslint-plugin-vue": "^6.2.2",
     "prettier": "^2.2.1",
     "vue-template-compiler": "^2.6.11"
-  }
+  },
+  "main": "lib/TablePro.umd.min.js"
 }

@@ -1,0 +1,28 @@
+.el-table>>>td {
+  padding: 0 !important;
+}
+.el-table>>>th {
+  padding: 0 !important;
+}
+
+.el-table>>>.el-input__inner {
+  border: none;
+  background: transparent !important;
+  padding: 0 !important;
+  font-size: 12px;
+  height: 32px;
+}
+
+.el-table>>>tbody tr:hover>td {
+  background-color: #F8F9FB !important;
+}
+.el-table >>> tr {
+  height: 30px !important;
+  /* pointer-events: none; */
+}
+.el-table >>> .el-table__footer-wrapper .cell {
+  text-align: left;
+}
+.el-table >>> .el-table__footer-wrapper tbody td {
+  background: #F8F9FB;
+}
