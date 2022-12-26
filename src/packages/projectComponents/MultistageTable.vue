@@ -14,7 +14,8 @@
     border
   >
     <template v-for="(item, index) in tableColumnTitles">
-      <MultistageTableItem :item="item" :key="index"> </MultistageTableItem>
+      <MultistageTableItem :item="item" :key="index" v-on="$listeners">
+      </MultistageTableItem>
     </template>
   </el-table>
 </template>
@@ -30,13 +31,13 @@ export default {
   data() {
     return {};
   },
-  created() {
-    this.$on("handleMessage", function (data) {
-      this.$emit("multistageTableChange", data);
-    });
-  },
+  created() {},
   mounted() {},
-  methods: {},
+  methods: {
+    tableItemMiniChange(e, index, row, column) {
+      this.$emit("tableProChange", e, index, row, column);
+    },
+  },
 };
 </script>
 <style scoped src="./css/tableProjectStyle.css"></style>

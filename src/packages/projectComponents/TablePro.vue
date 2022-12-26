@@ -55,22 +55,6 @@ export default {
     return {};
   },
   mounted() {},
-  // watch: {
-  // tableDataProp: {
-  //   immediate: true,
-  //   handler() {
-  //     this.$nextTick(() => {
-  //       console.log(this.summaryName)
-  //       const tdPros = document.querySelectorAll(
-  //         `.${this.summaryName} .el-table__footer-wrapper tr>td`
-  //       )
-  //       console.log(tdPros)
-  //       console.log(this.summaryColumn)
-  //       tdPros.length && (tdPros[0].colSpan = this.summaryColumn)
-  //     })
-  //   }
-  // }
-  // },
   methods: {
     tableItemMiniChange(e, index, row, column) {
       this.$emit("tableProChange", e, index, row, column);
