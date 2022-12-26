@@ -30,9 +30,7 @@
       "
       v-model="scopeRow[item.prop]"
       placeholder="请输入"
-      :maxlength="
-        defMaxlength('text', item.inputInfo && item.inputInfo.maxlength)
-      "
+      :maxlength="(item.inputInfo && item.inputInfo.maxlength) || 50"
       oninput="value=value.replace(/^\.+|[^\d.]/g,'')"
       @change="item.valueChange && item.valueChange(scopeRow[item.prop], item)"
     ></el-input>
@@ -40,16 +38,12 @@
       v-else
       v-model="scopeRow[item.prop]"
       placeholder="请输入"
-      :maxlength="
-        defMaxlength('text', item.inputInfo && item.inputInfo.maxlength)
-      "
+      :maxlength="(item.inputInfo && item.inputInfo.maxlength) || 50"
       @change="inputChange"
     ></el-input>
   </div>
 </template>
 <script>
-import { defMaxlength } from "./js/utils";
-
 export default {
   name: "MultistageTableItemMini",
   props: {
@@ -64,11 +58,6 @@ export default {
   },
   data() {
     return {};
-  },
-  computed: {
-    defMaxlength() {
-      return defMaxlength;
-    },
   },
   methods: {
     inputChange(e) {

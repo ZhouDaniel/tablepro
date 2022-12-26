@@ -33,11 +33,7 @@ export default {
   },
   created() {},
   mounted() {},
-  methods: {
-    tableItemMiniChange(e, index, row, column) {
-      this.$emit("tableProChange", e, index, row, column);
-    },
-  },
+  methods: {},
 };
 </script>
 <style scoped src="./css/tableProjectStyle.css"></style>

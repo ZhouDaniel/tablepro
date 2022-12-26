@@ -84,9 +84,7 @@
           "
           v-model="item[scope.row.prop]"
           :placeholder="scope.row.placeholderText || placeholderText"
-          :maxlength="
-            defMaxlength('text', item.inputInfo && item.inputInfo.maxlength)
-          "
+          :maxlength="(item.inputInfo && item.inputInfo.maxlength) || 50"
           oninput="value=value.replace(/^\.+|[^\d.]/g,'')"
           @change="inputChange($event, scope.$index, scope.row, scope.column)"
         ></el-input>
@@ -94,9 +92,7 @@
           v-else
           v-model="item[scope.row.prop]"
           :placeholder="scope.row.placeholderText || placeholderText"
-          :maxlength="
-            defMaxlength('text', item.inputInfo && item.inputInfo.maxlength)
-          "
+          :maxlength="(item.inputInfo && item.inputInfo.maxlength) || 50"
           @change="inputChange($event, scope.$index, scope.row, scope.column)"
         ></el-input>
       </template>
@@ -106,7 +102,6 @@
 <script>
 import tableProjectMixin from "./js/tableProjectMixin";
 // import TableItemMini from './TableItemMini'
-import { defMaxlength } from "./js/utils";
 
 export default {
   name: "TableProVertical",
@@ -119,11 +114,6 @@ export default {
       type: Array,
       default: () => [],
     },
-    resizable: {
-      // 表格是否可以拖动
-      type: Boolean,
-      default: false,
-    },
     // 下拉框是否可以搜索
     filterArr: {
       type: Array,
@@ -132,11 +122,6 @@ export default {
   },
   data() {
     return {};
-  },
-  computed: {
-    defMaxlength() {
-      return defMaxlength;
-    },
   },
   mounted() {},
   methods: {

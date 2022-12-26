@@ -43,21 +43,13 @@ export default {
     TableItemMini,
   },
   mixins: [tableProjectMixin],
-  props: {
-    dataWatch: {
-      type: Array,
-      default() {
-        return null;
-      },
-    },
-  },
   data() {
     return {};
   },
   mounted() {},
   methods: {
     tableItemMiniChange(e, index, row, column) {
-      this.$emit("tableProChange", e, index, row, column);
+      this.$emit("inputChange", e, index, row, column);
     },
   },
 };

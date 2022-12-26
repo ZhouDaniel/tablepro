@@ -60,21 +60,21 @@ export default {
       ],
       tableColumnTitlesZ3_demo: [
         {
-          label: "艾迪",
+          label: "编号",
           prop: "id",
           width: "100px",
           // minWidth: 1,
-          inputInfo: { inputCategory: "text" },
+          inputInfo: { inputCategory: "text" }, // input(默认), inputNumber, text, select, 四种值
         },
         { label: "姓名", prop: "name" },
         {
           label: "爱好",
           prop: "hobby",
           children: [
-            { label: "希望", prop: "hiking" },
+            { label: "游泳", prop: "swimming" },
             {
-              label: "游泳",
-              prop: "swwing",
+              label: "国家",
+              prop: "country",
               options: [
                 {
                   optionLabel: "美国",

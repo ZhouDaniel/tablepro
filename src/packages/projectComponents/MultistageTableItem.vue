@@ -59,7 +59,7 @@ export default {
   mounted() {},
   methods: {
     tableItemMiniChange(val, scope) {
-      this.$emit("handleMessage", val, scope.$index, scope.row, scope.column);
+      this.$emit("inputChange", val, scope.$index, scope.row, scope.column);
     },
   },
 };
